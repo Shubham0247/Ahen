@@ -1,0 +1,121 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  font-family: 'Roboto', sans-serif;
+  transform-style: preserve-3d;
+  transition: transform 0.5s, box-shadow 0.5s;
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  /* transform: translateY(-10px); */
+  transform: scale(1.05,1.05);
+  box-shadow: 1px 1px 10px white;
+}
+
+.form-label {
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+/* Style for rounded input boxes with icons */
+.rounded-input {
+  position: relative;
+}
+
+.rounded-input input {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+  border-radius: 25px;
+  padding: 10px 15px;
+  padding-left: 40px;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+
+.rounded-input i {
+  position: absolute;
+  padding-bottom: 6px;
+  left: 15px; 
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+  z-index: 1;
+}
+
+.form-control:focus {
+  /* border-color: #28a745; */
+  border-color: rgb(43, 118, 223);
+}
+
+.btn-success {
+  font-family: 'Roboto', sans-serif;
+  background-color:  rgb(43, 118, 223);
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+  background-color:  rgb(43, 118, 223);
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+.fas {
+  padding-top: 7px;
+}
+
+.or-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.or-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+
+.or-text {
+  color: #333;
+  font-size: 16px;
+}
+
+.google {
+  padding: 4px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+}
+
+.googleIcon {
+  height: 25px;
+  padding-bottom: 2px;
+  padding-right: 5px;
+  align-items: center;
+  justify-content: center;
+}
