@@ -1,18 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wellfleet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+
 
 .min-h-screen {
+  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
     display: flex;
   }
 
 .slogan {
     font-size: 100px;
-    font-family: 'Rubik Doodle Shadow', ubuntu;
+    /* font-family: 'Rubik Doodle Shadow', ubuntu; */
+    font-family: 'Rowdies', ubuntu;
     padding-left: 25px;
 }
 
 .description {
     font-size: medium;
+    color: white;
     font-family: 'Wellfleet', monospace;
     padding-left: 25px;
     text-align: justify;
@@ -27,6 +33,30 @@
     justify-content: center;
     text-align: start;
     align-items: center;
+}
+
+.slogan{
+  background: linear-gradient(
+      to right,
+      #7953cd 20%,
+      #00affa 30%,
+      #0190cd 70%,
+      #764ada 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
 }
 
 .slider-container {
@@ -44,7 +74,7 @@
     overflow: hidden;
     border: 2px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
     position: relative;
   }
   
@@ -62,3 +92,126 @@
     flex: 1;
     margin-top: 25px;
   }
+
+
+  .download-button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #0f1923;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all .15s ease;
+  }
+  
+  .download-button::before,
+  .download-button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    border: 1px solid #7D8082;
+    transition: all .15s ease;
+  }
+  
+  .download-button::before {
+    top: 0;
+    border-bottom-width: 0;
+  }
+  
+  .download-button::after {
+    bottom: 0;
+    border-top-width: 0;
+  }
+  
+  .download-button:active,
+  .download-button:focus {
+    outline: none;
+  }
+  
+  .download-button:active::before,
+  .download-button:active::after {
+    right: 3px;
+    left: 3px;
+  }
+  
+  .download-button:active::before {
+    top: 3px;
+  }
+  
+  .download-button:active::after {
+    bottom: 3px;
+  }
+  
+  .download-button_lg {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0f1923;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+  }
+  
+  .download-button_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #0f1923;
+  }
+  
+  .download-button_lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #0f1923;
+    transition: all .2s ease;
+  }
+  
+  .download-button_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-image: linear-gradient(to bottom right, #00c6ff,
+  #0072ff);
+    transform: skew(-15deg);
+    transition: all .2s ease;
+  }
+  
+  .download-button_text {
+    position: relative;
+  }
+  
+  .download-button:hover {
+    color: #0f1923;
+  }
+  
+  .download-button:hover .download-button_sl {
+    width: calc(100% + 15px);
+  }
+  
+  .download-button:hover .download-button_lg::after {
+    background-color: #fff;
+  }
+  

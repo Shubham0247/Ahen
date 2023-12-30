@@ -1,10 +1,11 @@
 import myImage from "../images/googleIcon.svg";
 import Validation from "../Signup/SignupValidation";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../Home/Home.css";
 
 function Signup() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -31,7 +32,14 @@ function Signup() {
     setErrors(Validation(values));
     if(errors.name === "" && errors.email === "" && errors.password==="") {
       fetch('http://localhost:8081/signup',options)
-      .then(res => console.log(res))
+      .then((res) => {
+        if(res.ok) {
+          navigate('/signin')
+        } else {
+          console.log("Network error occured");
+        }
+      }
+      )
       .catch(err => console.log(err))
     }
   }

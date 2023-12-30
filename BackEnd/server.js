@@ -13,6 +13,24 @@ const db = mysql2.createConnection({
     database: 'signup'
 })
 
+app.post('/signin',(req,res) => {
+    const sql = "SELECT * FROM login WHERE `email` = ? AND `password` = ?"
+    db.query(sql, [req.body.email, req.body.password], (err,data) => {
+        if(err) {
+            return res.json("Error");
+        }
+        if(data.length > 0) {
+            console.log("Yes data exists");
+            return res.json("Success");
+        } else {
+            console.log("No data doesn't exists");
+            return res.json("Fail");
+        }
+    })
+    
+    // console.log(req.body);
+})
+
 app.post('/signup',(req,res) => {
     const sql = "INSERT INTO login(`name`,`email`,`password`) VALUES(?)";
     const values = [
@@ -26,8 +44,10 @@ app.post('/signup',(req,res) => {
         }
         return res.json(data);
     })
+
+    console.log(req.body);
 })
 
 app.listen(8081, () => {
-    console.log("listening....");
+    console.log("listening........");
 })

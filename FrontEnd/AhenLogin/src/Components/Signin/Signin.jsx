@@ -1,10 +1,11 @@
 import "./Signin.css";
 
 import myImage from "../images/googleIcon.svg";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate} from "react-router-dom";
+import { useState} from "react";
 import Validation from "./SigninValidation";
 import "../Home/Home.css"
+
 
 function Signin() {
   const [values, setValues] = useState({
@@ -13,15 +14,47 @@ function Signin() {
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleInput = (e) => {
-    setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setValues((prev) => ({ ...prev, [e.target.name]: e.target.value}));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  let options = {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Accept': 'application/json',
+      'Content-type': 'application/json;charset=UTF-8'
+    },
+    body: JSON.stringify(values) 
+  }
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
     setErrors(Validation(values));
-  };
+
+    if (errors.email === "" && errors.password === "") {
+      fetch('http://localhost:8081/signin', options)
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .then((data) => {
+          if (data === "Success") {
+            navigate("/");
+          } else {
+            alert("No data exists");
+          }
+        })
+        .catch(err => console.log(err));
+    }
+  }
+
 
   return (
     <>
