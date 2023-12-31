@@ -4,9 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
 
 
+
 .min-h-screen {
-  /* background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); */
-  /* background: linear-gradient(135deg, #f5f7fa 0%, #9ca8bc 100%); */
     display: flex;
   }
 
@@ -19,8 +18,8 @@
 
 .description {
     font-size: medium;
-    /* color: white; */
-    color: black;
+    color: white;
+    /* color: black; */
     font-family: 'Wellfleet', monospace;
     padding-left: 25px;
     text-align: justify;

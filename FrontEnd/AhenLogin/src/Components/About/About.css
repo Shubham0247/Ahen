@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wellfleet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+
+
+/* .min-h-screen {
+  background: linear-gradient(150.1deg, rgb(16, 2, 50) 70.4%,  rgb(205, 1, 106) 70.2%); 
+  display: flex;
+  } */
+
+  .about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  @keyframes about-cardShine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .about-card.red {
+    background: transparent;
+    animation: about-cardShine 5s ease-in-out infinite alternate;
+  }
+  
+  .about-card.blue {
+    background: transparent;
+    animation: about-cardShine 5s ease-in-out infinite alternate;
+
+}
+  
+  .about-card.green {
+    background: transparent;
+    animation: about-cardShine 5s ease-in-out infinite alternate;
+
+}
+  
+  .about-card.orange {
+    background: transparent;
+    animation: about-cardShine 5s ease-in-out infinite alternate;
+
+}
+  
+  .about-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 70%;
+    width: 100%;
+    padding: 20px;
+    background: transparent ;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    background-size: 500% auto;
+    animation: about-cardShine 5s ease-in-out infinite alternate;
+  }
+  
+  
+  
+  .about-card h3.tip {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .about-card p.second-text {
+    font-size: 1em;
+  }
+  
+  .about-card:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .about-cards:hover > .about-card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+  }
+
+  .welcome{
+    background: linear-gradient(
+        to right,
+        #ffffff 20%,
+        #c9badf 30%,
+        #d2f7f4 70%,
+        #ffcdcd 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+  }
+
+  @keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+  }

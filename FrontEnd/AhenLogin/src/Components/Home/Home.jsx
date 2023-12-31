@@ -6,10 +6,9 @@ import img2 from "../images/img2.jpg";
 import img3 from "../images/img3.jpg";
 import img4 from "../images/img4.jpg";
 import img5 from "../images/img5.png";
-
+import { Link } from "react-router-dom";
 
 export default function Home() {
-
   useEffect(() => {
     var slideIndex = 0;
     carousel();
@@ -47,7 +46,10 @@ export default function Home() {
           <button className="download-button">
             <span className="download-button_lg">
               <span className="download-button_sl"></span>
-              <span className="download-button_text">Explore more</span>
+
+              <Link to="/about" className="download-button_text text-white">
+                Explore more
+              </Link>
             </span>
           </button>
         </div>

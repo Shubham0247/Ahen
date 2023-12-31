@@ -46,10 +46,13 @@ export default function Contact() {
 
   return (
     <div className="relative flex items-top justify-center min-h-[700px] sm:items-center sm:pt-0">
-      <div className="max-w-6xl mx-auto sm:px-6 lg:px-8 ">
+      <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div className="mt-8 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-6 mr-2 bg-gray-100 sm:rounded-lg border border-black">
+            <div className="p-6 mr-2 bg-gray-100 sm:rounded-lg border border-black" style={{
+              marginTop: "60px",
+              height: "380px"
+            }}>
               <h1 className="text-2xl sm:text-4xl text-black font-bold tracking-tight">
                 Get in touch:
               </h1>
@@ -125,7 +128,7 @@ export default function Contact() {
                   />
                 </svg>
                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                  shreyawaghole0507@gmail.com
+                  ahenbookit@gmail.com
                 </div>
               </div>
             </div>
@@ -196,10 +199,11 @@ export default function Contact() {
                 </div>
               )}
 
+        
               <button
                 type="submit"
                 className="md:w-32 bg-orange-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-orange-600 transition ease-in-out duration-300"
-              >
+                >
                 Submit
               </button>
             </form>
