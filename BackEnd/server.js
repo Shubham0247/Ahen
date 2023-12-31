@@ -28,7 +28,7 @@ app.post('/signin',(req,res) => {
         }
     })
     
-    // console.log(req.body);
+    console.log(req.body);
 })
 
 app.post('/signup',(req,res) => {
@@ -45,7 +45,27 @@ app.post('/signup',(req,res) => {
         return res.json(data);
     })
 
+    // console.log(req.body);
+})
+
+app.post('/contact',(req,res) => {
+
     console.log(req.body);
+
+    const sql = "INSERT INTO contact(`name`,`email`,`tel`,`query`) VALUES(?)";
+    const values = [
+        req.body.name,
+        req.body.email,
+        req.body.tel,
+        req.body.query,
+    ]
+    db.query(sql, [values], (err, data) => {
+        if(err){
+            return res.json(err)
+        }
+        return res.json(data);
+    })
+
 })
 
 app.listen(8081, () => {

@@ -6,6 +6,7 @@ import "../Home/Home.css";
 
 function Signup() {
   const navigate = useNavigate();
+
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -13,36 +14,46 @@ function Signup() {
   });
 
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleInput = (event) => {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
   let options = {
-    method: 'POST',
-    mode: 'cors',
+    method: "POST",
+    mode: "cors",
     headers: {
-      'Accept': 'application/json',
-      'Content-type': 'application/json;charset=UTF-8'
+      Accept: "application/json",
+      "Content-type": "application/json;charset=UTF-8",
     },
-    body: JSON.stringify(values) 
-  }
+    body: JSON.stringify(values),
+  };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setErrors(Validation(values));
-    if(errors.name === "" && errors.email === "" && errors.password==="") {
-      fetch('http://localhost:8081/signup',options)
-      .then((res) => {
-        if(res.ok) {
-          navigate('/signin')
-        } else {
-          console.log("Network error occured");
-        }
-      }
-      )
-      .catch(err => console.log(err))
+    if (errors.name === "" && errors.email === "" && errors.password === "") {
+      await fetch("http://localhost:8081/signup", options)
+        .then((res) => {
+          if (res.ok) {
+            setSuccessMessage("You have registered successfully!");
+            setErrorMessage(""); // Reset error message
+            navigate('/signin');
+          } else {
+            setSuccessMessage(""); // Reset success message
+            setErrorMessage("An error occurred during registration.");
+            console.log("Network error occurred");
+          }
+        })
+        .catch(err => {
+          setSuccessMessage(""); // Reset success message
+          setErrorMessage("An error occurred during registration.");
+          console.log(err);
+        });
     }
-  }
+  };
 
   return (
     <>
@@ -124,6 +135,18 @@ function Signup() {
                 >
                   Sign Up
                 </button>
+
+                {/* Display success message */}
+                {successMessage && (
+                  <div className="text-green-500 text-center">
+                    {successMessage}
+                  </div>
+                )}
+
+                {/* Display error message */}
+                {errorMessage && (
+                  <div className="text-red-500 text-center">{errorMessage}</div>
+                )}
 
                 <div className="text-center or-section">
                   <hr className="or-line" />

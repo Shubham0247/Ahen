@@ -5,7 +5,8 @@
 
 
 .min-h-screen {
-  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  /* background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); */
+  /* background: linear-gradient(135deg, #f5f7fa 0%, #9ca8bc 100%); */
     display: flex;
   }
 
@@ -18,7 +19,8 @@
 
 .description {
     font-size: medium;
-    color: white;
+    /* color: white; */
+    color: black;
     font-family: 'Wellfleet', monospace;
     padding-left: 25px;
     text-align: justify;
@@ -74,7 +76,7 @@
     overflow: hidden;
     border: 2px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 8px rgba(11, 7, 7, 0.5);
     position: relative;
   }
   
@@ -214,4 +216,3 @@
   .download-button:hover .download-button_lg::after {
     background-color: #fff;
   }
-  
