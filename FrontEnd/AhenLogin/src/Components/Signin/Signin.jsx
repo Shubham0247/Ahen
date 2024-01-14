@@ -46,10 +46,10 @@ function Signin() {
         .then((data) => {
           if (data === "Success") {
             navigate("/welcome");
+          } else if (data === "IncorrectPassword") {
+            setErrorMessage("Incorrect password, please re-enter!");
           } else {
-            // alert("No data exists");
-            setErrorMessage("Incorrect details, please re-enter!");
-            console.log("Network error occurred");
+            setErrorMessage("Email does not exists");
           }
         })
         .catch((err) => console.log(err));
@@ -59,85 +59,91 @@ function Signin() {
   return (
     <>
       <div className="min-h-screen">
-        <div className="leftContainer">
-          <div className="slogan">
-            <h1 className="text-blue-950">Go Ahed</h1>
-            <h1 className="text-blue-950">With Ahen</h1>
-          </div>
-          <div className="description">
-            <p>
-              Ahen, India&apos;s leading driving school, tackles common issues
-              in driver education by offering affordable classes at Rs.100. With
-              home services, flexible payments, and a focus on bike learning,
-              Ahen aims to be the nation&apos;s top choice for quality and
-              convenience in driving education.
-            </p>
+        <div className="lg:w-1/2 lg:p-10 flex flex-col lg:flex-row sloganbox">
+          <div className="lg:order-2 flex-1">
+            <div className="slogan">
+              <h1 className="text-blue-950">Go Ahed</h1>
+              <h1 className="text-blue-950">With Ahen</h1>
+            </div>
+            <div className="description size-auto">
+              <p>
+                Ahen, India&apos;s leading driving school, tackles common issues
+                in driver education by offering affordable classes at Rs.100.
+                With home services, flexible payments, and a focus on bike
+                learning, Ahen aims to be the nation&apos;s top choice for
+                quality and convenience in driving education.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="flex signin-box justify-center mt-4 min-h-screen">
-          <div className="card-container">
-            <div className="card">
-              <h2 className="text-center mb-4">Sign-in</h2>
-              <form action="" onSubmit={handleSubmit}>
-                <div className="mb-3 rounded-input">
-                  <label htmlFor="email" className="form-label">
-                    <i className="fas fa-envelope"></i>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    name="email"
-                    className="form-control"
-                    onChange={handleInput}
-                    required
-                  />
-                  {errors.email && (
-                    <span className="text-danger">{errors.email}</span>
+        <div className="lg:order-1 flex-1 signinbox">
+          <div className="flex signin-box justify-center mt-4">
+            <div className="card-container">
+              <div className="card">
+                <h2 className="text-center mb-4">Sign-in</h2>
+                <form action="" onSubmit={handleSubmit}>
+                  <div className="mb-3 rounded-input">
+                    <label htmlFor="email" className="form-label">
+                      <i className="fas fa-envelope"></i>
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      name="email"
+                      className="form-control"
+                      onChange={handleInput}
+                      required
+                    />
+                    {errors.email && (
+                      <span className="text-danger">{errors.email}</span>
+                    )}
+                  </div>
+
+                  <div className="mb-3 rounded-input">
+                    <label htmlFor="password" className="form-label">
+                      <i className="fas fa-lock"></i>
+                    </label>
+                    <input
+                      type="password"
+                      placeholder="Enter your password"
+                      name="password"
+                      className="form-control"
+                      onChange={handleInput}
+                      required
+                    />
+                    {errors.password && (
+                      <span className="text-danger">{errors.password}</span>
+                    )}
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full w-full my-2"
+                  >
+                    Sign in
+                  </button>
+
+                  {errorMessage && (
+                    <div className="text-red-500 text-center">
+                      {errorMessage}
+                    </div>
                   )}
+
+                  <div className="text-center or-section">
+                    <hr className="or-line" />
+                    <span className="or-text">OR</span>
+                    <hr className="or-line" />
+                  </div>
+                </form>
+
+                <div className="flex m-5 items-center mb-3 google text-center rounded-md">
+                  <img src={myImage} alt="" className="googleIcon mr-2" />
+                  <span>Continue with Google</span>
                 </div>
 
-                <div className="mb-3 rounded-input">
-                  <label htmlFor="password" className="form-label">
-                    <i className="fas fa-lock"></i>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    name="password"
-                    className="form-control"
-                    onChange={handleInput}
-                    required
-                  />
-                  {errors.password && (
-                    <span className="text-danger">{errors.password}</span>
-                  )}
-                </div>
-                <button
-                  type="submit"
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full w-full my-2"
-                >
-                  Sign in
-                </button>
-
-                {errorMessage && (
-                  <div className="text-red-500 text-center">{errorMessage}</div>
-                )}
-
-                <div className="text-center or-section">
-                  <hr className="or-line" />
-                  <span className="or-text">OR</span>
-                  <hr className="or-line" />
-                </div>
-              </form>
-
-              <div className="flex m-5 items-center mb-3 google text-center rounded-md">
-                <img src={myImage} alt="" className="googleIcon mr-2" />
-                <span>Continue with Google</span>
+                <p className="text-center mt-3">
+                  Not a member? <Link to="/signup">Sign up</Link>
+                </p>
               </div>
-
-              <p className="text-center mt-3">
-                Not a member? <Link to="/signup">Sign up</Link>
-              </p>
             </div>
           </div>
         </div>

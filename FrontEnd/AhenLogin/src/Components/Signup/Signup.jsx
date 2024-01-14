@@ -33,32 +33,38 @@ function Signup() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setErrors(Validation(values));
-    if (errors.name === "" && errors.email === "" && errors.password === "") {
-      await fetch("http://localhost:8081/signup", options)
-        .then((res) => {
-          if (res.ok) {
-            setSuccessMessage("You have registered successfully!");
-            setErrorMessage(""); // Reset error message
-            navigate('/signin');
-          } else {
-            setSuccessMessage(""); // Reset success message
-            setErrorMessage("An error occurred during registration.");
-            console.log("Network error occurred");
-          }
-        })
-        .catch(err => {
+  
+    // Use the updated state values
+    const validationErrors = Validation(values);
+    setErrors(validationErrors);
+  
+    // Check if there are no validation errors
+    if (validationErrors.name === "" && validationErrors.email === "" && validationErrors.password === "") {
+      try {
+        const res = await fetch("http://localhost:8081/signup", options);
+  
+        if (res.ok) {
+          setSuccessMessage("You have registered successfully!");
+          setErrorMessage(""); // Reset error message
+          navigate('/signin');
+        } else {
           setSuccessMessage(""); // Reset success message
           setErrorMessage("An error occurred during registration.");
-          console.log(err);
-        });
+          console.log("Network error occurred");
+        }
+      } catch (error) {
+        setSuccessMessage(""); // Reset success message
+        setErrorMessage("An error occurred during registration.");
+        console.log(error);
+      }
     }
   };
+  
 
   return (
     <>
       <div className="min-h-screen">
-        <div className="leftContainer">
+        <div className="leftContainer sloganbox">
           <div className="slogan">
             <h1 className="text-blue-950">Go Ahed</h1>
             <h1 className="text-blue-950">With Ahen</h1>
@@ -73,7 +79,7 @@ function Signup() {
             </p>
           </div>
         </div>
-        <div className="flex signup-box justify-center mt-4 min-h-screen">
+        <div className="flex signup-box justify-center mt-4 min-h-screen signinbox">
           <div className="card-container">
             <div className="card">
               <h2 className="text-center mb-4">Sign-Up</h2>

@@ -1,0 +1,23 @@
+.school-imgs img {
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.info {
+    height: 40px;
+}
+
+.info-box {
+    width: 600px;
+}
+
+.school-card {
+    background-color: rgb(255, 255, 255);
+    /* background:linear-gradient(135deg, #E3E3E3 0%,#c2c5c8 100%); */
+}
+.school-card:hover{
+    transform: scaleX(1.01);
+    background-color: aliceblue;
+}
