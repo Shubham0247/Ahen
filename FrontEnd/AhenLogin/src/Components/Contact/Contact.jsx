@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Contact() {
-    // const navigate = useNavigate();
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -10,6 +9,7 @@ export default function Contact() {
   });
 
   const [successMessage, setSuccessMessage] = useState("");
+  const formRef = useRef(null);
 
   const handleInput = (event) => {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
@@ -31,18 +31,32 @@ export default function Contact() {
       .then((res) => {
         if (res.ok) {
           setSuccessMessage("Form submitted successfully!");
-          setValues({
-            name: "",
-            email: "",
-            tel: "",
-            query: "",
-          });
+          formRef.current.reset();
+          // setValues((prev) => ({
+          //   ...prev,
+          //   name: "",
+          //   email: "",
+          //   tel: "",
+          //   query: "",
+          // }));
         } else {
           console.log("Network error occured");
         }
       })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    // Use the effect to clear the success message after a delay
+    if (successMessage) {
+      const timerId = setTimeout(() => {
+        setSuccessMessage("");
+      }, 5000);
+
+      return () => clearTimeout(timerId);
+    }
+  }, [successMessage]);
+
 
   return (
     <div className="relative flex items-top justify-center min-h-[700px] sm:items-center sm:pt-0">
@@ -134,6 +148,7 @@ export default function Contact() {
             </div>
 
             <form
+              ref={formRef}
               onSubmit={handleSubmit}
               className="p-6 flex flex-col justify-center mt-8"
             >
