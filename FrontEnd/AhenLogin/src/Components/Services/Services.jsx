@@ -48,7 +48,7 @@ const Services = () => {
       img: Diamond,
       rating: 4.2,
       city: "Pune",
-      distance: 150,
+      distance: 150, 
       hourlyCharges: 220,
     },
     {
@@ -126,7 +126,7 @@ const Services = () => {
   ];
 
   const [filter, setFilter] = useState({ rating: 0, city: "" });
-  const [sortedBy, setSortedBy] = useState("distance"); // Default sorting
+  const [sortedBy, setSortedBy] = useState("distance"); 
 
   // Function to filter driving schools based on rating and city
   const filteredDrivingSchools = drivingSchoolsData.filter(
@@ -140,17 +140,16 @@ const Services = () => {
   const sortedDrivingSchools = filteredDrivingSchools.sort((a, b) => {
     if (sortedBy === "distance") return a.distance - b.distance;
     if (sortedBy === "hourlyCharges") return a.hourlyCharges - b.hourlyCharges;
-    return b.rating - a.rating; // Default: Sort by rating
+    return b.rating - a.rating;
   });
+
   return (
     <div className="flex min-h-screen">
-      {/* Filtering Section */}
-      {/* <div className="w-1/4 p-4 bg-gray-200"> */}
-      <div className="w-1/4 p-4 bg-gray-200 sticky top-0 h-screen overflow-y-hidden">
+      <div className="w-1/4 filter-column p-4 bg-gray-200 sticky top-0 h-screen overflow-y-hidden">
         <div className="ml-2 mt-4">
-          <h2 className="text-3xl font-semibold mb-4">Filter & Sort</h2>
+          <h2 className="text-3xl font-semibold mb-4 filter-sort-heading">Filter & Sort</h2>
 
-          <div className="mb-4">
+          <div className="mb-4 filter-by-rating">
             <label className="block text-xl font-medium text-gray-600">
               Filter by Rating:
             </label>
@@ -215,11 +214,13 @@ const Services = () => {
           </div>
 
           {/* Filter by City */}
-          <div className="mb-4">
+          <div className="filter-for-mobile">
+
+          <div className="mb-4 filter-by-city">
             <label
               htmlFor="cityFilter"
               className="block text-xl font-medium text-gray-600"
-            >
+              >
               Filter by City:
             </label>
             <input
@@ -228,15 +229,15 @@ const Services = () => {
               value={filter.city}
               onChange={(e) => setFilter({ ...filter, city: e.target.value })}
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-            />
+              />
           </div>
 
           {/* Sort By */}
-          <div>
+          <div className="filter-sort">
             <label
               htmlFor="sortFilter"
               className="block text-xl font-medium text-gray-600"
-            >
+              >
               Sort By:
             </label>
             <select
@@ -244,7 +245,7 @@ const Services = () => {
               onChange={(e) => setSortedBy(e.target.value)}
               value={sortedBy}
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-            >
+              >
               <option value="distance">Distance</option>
               <option value="rating">Rating</option>
               <option value="hourlyCharges">Hourly Charges</option>
@@ -252,10 +253,11 @@ const Services = () => {
           </div>
         </div>
       </div>
+      </div>
 
       {/* List of Driving Schools */}
       <div
-        className="w-3/4 p-4"
+        className="w-3/4 p-4 list-column"
         style={{
           backdropFilter: "blur(10px)",
           overflowY: "auto",
@@ -277,11 +279,11 @@ const Services = () => {
             </div>
 
             <div className="ml-4 info-box">
-              <h3 className="text-2xl font-serif font-semibold mb-4">
+              <h3 className="text-2xl font-serif font-semibold mb-4 school-name">
                 {school.name}
               </h3>
 
-              <div className="grid grid-cols-2 mb-2">
+              <div className="card-info grid grid-cols-2 mb-2">
                 <div className="info">
                   <p className="text-gray-600">
                     <strong>City: </strong>

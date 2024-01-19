@@ -21,3 +21,47 @@
     transform: scaleX(1.01);
     background-color: aliceblue;
 }
+
+@media (max-width: 768px) {
+
+    .filter-column {
+        height: 100px;
+    }   
+
+    .flex {
+      flex-direction: column;
+    }
+  
+    .filter-sort-heading {
+        display: none;
+    }
+
+    .filter-by-rating {
+        display: none;
+    }
+
+    .filter-for-mobile {
+        display: flex;
+    }
+
+    .filter-column {
+      width: 100%; 
+    }
+  
+    .list-column {
+      width: 100%; 
+    }
+
+    .filter-by-city {
+        margin-right: 20px;
+    }
+
+    .card-info {
+        display: inline-block;
+    }
+
+    .school-name {
+        margin-top: 20px;
+    }
+    
+  }

@@ -39,6 +39,10 @@ app.post('/contact', (req, res) => {
   .catch(err => res.json(err))
 })
 
+app.get('/services', (req, res) => {
+  console.log(req.body);
+})
+
 app.listen(8081, () => {
   console.log("Server is running...");
 })

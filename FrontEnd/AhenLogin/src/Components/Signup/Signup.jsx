@@ -34,11 +34,10 @@ function Signup() {
   const handleSubmit = async (event) => {
     event.preventDefault();
   
-    // Use the updated state values
     const validationErrors = Validation(values);
     setErrors(validationErrors);
-  
-    // Check if there are no validation errors
+
+
     if (validationErrors.name === "" && validationErrors.email === "" && validationErrors.password === "") {
       try {
         const res = await fetch("http://localhost:8081/signup", options);

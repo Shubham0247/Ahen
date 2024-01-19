@@ -32,13 +32,6 @@ export default function Contact() {
         if (res.ok) {
           setSuccessMessage("Form submitted successfully!");
           formRef.current.reset();
-          // setValues((prev) => ({
-          //   ...prev,
-          //   name: "",
-          //   email: "",
-          //   tel: "",
-          //   query: "",
-          // }));
         } else {
           console.log("Network error occured");
         }
@@ -47,7 +40,6 @@ export default function Contact() {
   };
 
   useEffect(() => {
-    // Use the effect to clear the success message after a delay
     if (successMessage) {
       const timerId = setTimeout(() => {
         setSuccessMessage("");
