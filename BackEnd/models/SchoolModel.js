@@ -1,6 +1,6 @@
-const mongoogse = require("mongoose")
+const mongoose = require("mongoose")
 
-const SchoolSchema = new mongoose.Scheme({
+const SchoolSchema = new mongoose.Schema({
       id: Number,
       name: String,
       img: String,
@@ -10,6 +10,6 @@ const SchoolSchema = new mongoose.Scheme({
       hourlyCharges: Number,
 })
 
-const SchoolModel = mongoogse.model("driving_school_data", SchoolSchema)
+const SchoolModel = mongoose.model("driving_schools_data", SchoolSchema)
 
 module.exports = SchoolModel

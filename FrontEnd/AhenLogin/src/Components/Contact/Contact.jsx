@@ -40,6 +40,7 @@ export default function Contact() {
   };
 
   useEffect(() => {
+    
     if (successMessage) {
       const timerId = setTimeout(() => {
         setSuccessMessage("");

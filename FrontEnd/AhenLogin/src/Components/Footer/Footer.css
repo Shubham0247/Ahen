@@ -1,0 +1,4 @@
+    #social-accounts {
+        display: flex;
+        flex-direction: row;
+    }

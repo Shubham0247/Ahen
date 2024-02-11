@@ -1,3 +1,11 @@
+body {
+    background: linear-gradient(135deg, #E3E3E3 0%, #c2c5c8 100%);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
 .school-imgs img {
     height: 150px;
     width: 200px;
@@ -10,22 +18,126 @@
 }
 
 .info-box {
-    width: 600px;
+    max-width: 600px;
 }
 
 .school-card {
     background-color: rgb(255, 255, 255);
-    /* background:linear-gradient(135deg, #E3E3E3 0%,#c2c5c8 100%); */
-}
-.school-card:hover{
-    transform: scaleX(1.01);
-    background-color: aliceblue;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 5px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.school-card:hover {
+    transform: scaleX(1.01);
+    background-color: aliceblue;
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button-book-now {
+    background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.button-book-now:hover {
+    background-color: #4caf50;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    animation: fadeIn 0.5s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 50px auto;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.filter-column {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-by-rating {
+    margin-bottom: 1rem;
+}
+
+.filter-by-rating label {
+    font-size: 1rem;
+    margin-right: 1rem;
+    color: #333;
+}
+
+.filter-by-rating input {
+    margin-right: 0.5rem;
+}
+
+.filter-by-city {
+    margin-bottom: 1rem;
+}
+
+.filter-by-city label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.filter-by-city select {
+    width: calc(100% - 2rem); /* Adjusted width */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.filter-sort {
+    margin-bottom: 1rem;
+}
+
+.filter-sort label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.filter-sort select {
+    width: calc(100% - 2rem); /* Adjusted width */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.filter-for-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
 
     .filter-column {
-        height: 100px;
+        height: auto; 
     }   
 
     .flex {
@@ -42,10 +154,11 @@
 
     .filter-for-mobile {
         display: flex;
+        flex-direction: row;
     }
 
     .filter-column {
-      width: 100%; 
+      width: 100%;
     }
   
     .list-column {
@@ -53,7 +166,13 @@
     }
 
     .filter-by-city {
+        align-self: flex-start;
+        margin-right: 10%;
+    }
+
+    .filter-by-city select {
         margin-right: 20px;
+        width: 100%;
     }
 
     .card-info {
@@ -64,4 +183,11 @@
         margin-top: 20px;
     }
     
-  }
+    #sortFilter {
+        width: auto;
+    }
+
+    .new-class {
+        display: none;
+    }
+}

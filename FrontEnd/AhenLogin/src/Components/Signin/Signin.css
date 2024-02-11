@@ -119,17 +119,3 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
-
-.signinbox{
-  width: 50%;
-}
-
-@media only screen and (max-width: 1032px) {
-  .sloganbox{
-    display: none;
-  }
-
-  .lg:order-1 {
-    width: 100%;
-  }
-}

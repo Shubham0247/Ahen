@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import myLogo from "../images/ahenLogo2.png";
-import "../Header/Header.css"
-
+import "./Header.css"
 export default function Header() {
   return (
     <header className="shadow sticky z-50 top-0">
@@ -68,14 +67,38 @@ export default function Header() {
               </li>
               <li>
                 <NavLink
-                  to={"/services"}
+                  to={"/location"}
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
                       isActive ? "text-orange-600" : "text-gray-600"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-950) lg:p-0`
                   }
                 >
-                  Services
+                  Location
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={"/service"}
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "text-orange-600" : "text-gray-600"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-950) lg:p-0`
+                  }
+                >
+                  Service
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={"/book"}
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "text-orange-600" : "text-gray-600"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-950) lg:p-0`
+                  }
+                >
+                  Book Now
                 </NavLink>
               </li>
             </ul>

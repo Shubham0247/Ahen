@@ -29,8 +29,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen home-screen flex flex-col lg:flex-row">
-      <div className="lg:w-1/2 lg:p-10">
+    <div className="min-h-screen home-screen">
+      <div className="leftContainer">
         <div className="slogan">
           <h1>Go Ahed</h1>
           <h1>With Ahen</h1>
@@ -55,12 +55,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="slider lg:w-1/2">
-        <img className="mySlides hidden lg:block" src={img1} />
-        <img className="mySlides hidden lg:block" src={img2} />
-        <img className="mySlides hidden lg:block" src={img3} />
-        <img className="mySlides hidden lg:block" src={img4} />
-        <img className="mySlides hidden lg:block" src={img5} />
+      <div className="slider">
+        <img className="mySlides" src={img1} />
+        <img className="mySlides" src={img2} />
+        <img className="mySlides" src={img3} />
+        <img className="mySlides" src={img4} />
+        <img className="mySlides" src={img5} />
       </div>
     </div>
   );

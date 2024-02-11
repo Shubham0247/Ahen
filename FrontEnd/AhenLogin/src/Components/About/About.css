@@ -1,111 +1,156 @@
+/* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wellfleet&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
 
+/* Keyframes */
+@keyframes about-cardShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
 
-/* .min-h-screen {
-  background: linear-gradient(150.1deg, rgb(16, 2, 50) 70.4%,  rgb(205, 1, 106) 70.2%); 
+/* About Cards */
+.about-cards {
   display: flex;
-  } */
-
-  .about-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  @keyframes about-cardShine {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
-  }
-
-  .about-card.red {
-    background: transparent;
-    animation: about-cardShine 5s ease-in-out infinite alternate;
-  }
-  
-  .about-card.blue {
-    background: transparent;
-    animation: about-cardShine 5s ease-in-out infinite alternate;
-
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-  
-  .about-card.green {
-    background: transparent;
-    animation: about-cardShine 5s ease-in-out infinite alternate;
 
+.about-card {
+  flex: 1;
+  min-width: 200px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: justify;
+  height: auto;
+  padding: 20px;
+  background: transparent;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  background-size: 500% auto;
+  animation: about-cardShine 5s ease-in-out infinite alternate;
+  transition: transform 0.4s, filter 0.4s, 400ms;
 }
-  
-  .about-card.orange {
-    background: transparent;
-    animation: about-cardShine 5s ease-in-out infinite alternate;
 
+.about-card h3.tip {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
-  
+
+.about-card p.second-text {
+  font-size: 1em;
+}
+
+.about-card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.about-cards:hover > .about-card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+
+/* Welcome Section */
+.welcome {
+  background: linear-gradient(
+    to right,
+    #f46565 20%,
+    #f4a446 30%,
+    #f4a446 80%,
+    #f4bb65 70%,
+    #7d0000 80%,
+    #d34949 20%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Image Section */
+.smaller-image {
+  max-width: 600px;
+  width: 100%;
+  height: 400px;
+}
+
+.about-card:hover {
+  transform: scale(1.1, 1.1);
+  filter: blur(0);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.about-cards:hover > .about-card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hover Effect Animation */
+@keyframes hoverEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Why Choose Container */
+.why-choose-container {
+  background: transparent;
+  animation: about-cardShine 5s ease-in-out infinite alternate;
+  transition: transform 0.4s, filter 0.4s, 400ms;
+}
+
+.why-choose-container:hover {
+  transform: scale(1.1, 1.1);
+  filter: blur(0);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
   .about-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    height: 70%;
-    width: 100%;
-    padding: 20px;
-    background: transparent ;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    transition: 400ms;
-    background-size: 500% auto;
-    animation: about-cardShine 5s ease-in-out infinite alternate;
-  }
-  
-  
-  
-  .about-card h3.tip {
-    font-size: 1.5em;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  
-  .about-card p.second-text {
-    font-size: 1em;
-  }
-  
-  .about-card:hover {
-    transform: scale(1.1, 1.1);
-  }
-  
-  .about-cards:hover > .about-card:not(:hover) {
-    filter: blur(10px);
-    transform: scale(0.9, 0.9);
+    max-width: 100%; /* Adjust max-width for smaller screens */
   }
 
-  .welcome{
-    background: linear-gradient(
-        to right,
-        #ffffff 20%,
-        #c9badf 30%,
-        #d2f7f4 70%,
-        #ffcdcd 80%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 500% auto;
-    animation: textShine 5s ease-in-out infinite alternate;
+  .container {
+    padding: 0 20px;
   }
+}
 
-  @keyframes textShine {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-  }
