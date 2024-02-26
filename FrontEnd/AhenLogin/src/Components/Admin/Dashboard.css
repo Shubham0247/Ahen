@@ -1,0 +1,117 @@
+
+  .dashboard-container {
+    background-color: white;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+  }
+  
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .chart-container {
+    margin-top: 20px;
+  }
+
+  .dashboard-card-container{
+    display: flex;
+  }
+
+  .dashboard-card {
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 25%;
+    margin-left: 10px;
+    border-radius: 20px;
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title span {
+    position: relative;
+    padding: 0.5rem;
+    background-color: #10B981;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 9999px;
+  }
+  
+  .title span svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    height: 1rem;
+  }
+  
+  .title-text {
+    margin-left: 0.5rem;
+    color: #374151;
+    font-size: 18px;
+  }
+  
+  .percent {
+    margin-left: 0.5rem;
+    color: #02972f;
+    font-weight: 600;
+    display: flex;
+  }
+  
+  .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .data p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #1F2937;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align: left;
+  }
+  
+  .data .range {
+    position: relative;
+    background-color: #E5E7EB;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  
+  .data .range .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #10B981;
+    width: 76%;
+    height: 100%;
+    border-radius: 0.25rem;
+  }
+
+  /* Responsive styling for the chart */
+  @media (max-width: 768px) {
+    .grid-cols-2, .grid-cols-3 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }

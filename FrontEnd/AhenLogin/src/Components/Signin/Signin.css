@@ -119,3 +119,23 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+
+  .signin-screen{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .leftContainer {
+    width: auto;
+    height: auto;
+  }
+
+  .signin-box {
+    width: 400px;
+    align-items: center;
+    margin-left: 13%;
+    height: auto;
+  }
+}

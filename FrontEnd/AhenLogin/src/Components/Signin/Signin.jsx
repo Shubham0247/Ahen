@@ -58,7 +58,7 @@ function Signin() {
 
   return (
     <>
-      <div className="min-h-screen">
+      <div className="min-h-screen signin-screen">
         <div className="leftContainer">
           <div className="slogan">
             <h1 className="text-blue-950">Go Ahed</h1>

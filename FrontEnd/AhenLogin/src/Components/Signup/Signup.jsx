@@ -3,6 +3,7 @@ import Validation from "../Signup/SignupValidation";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../Home/Home.css";
+import "./Signup.css"
 
 function Signup() {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ function Signup() {
 
   return (
     <>
-      <div className="min-h-screen">
+      <div className="min-h-screen signup-screen">
         <div className="leftContainer">
           <div className="slogan">
             <h1 className="text-blue-950">Go Ahed</h1>
@@ -73,6 +74,7 @@ function Signup() {
             </p>
           </div>
         </div>
+
         <div className="flex signup-box justify-center mt-4 min-h-screen">
           <div className="card-container">
             <div className="card">

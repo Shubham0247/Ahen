@@ -10,10 +10,11 @@ import Contact from './Components/Contact/Contact.jsx'
 import Welcome from './Components/Welcome/Welcome.jsx'
 import Location from './Components/Location/Location.jsx'
 import Services from './Components/Services/Services.jsx'
-
+import AdminLogin from './Components/Admin/AdminLogin.jsx'
+import AddDrivingSchool from './Components/AddDrivingSchool/AddDrivingSchool.jsx'
+import Dashboard from './Components/Admin/Dashboard.jsx'
 
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import SchoolDetails from './Components/Services/SchoolDetails.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +28,9 @@ const router = createBrowserRouter(
       <Route path='welcome' element={<Welcome />} />
       <Route path='location' element={<Location />} />
       <Route path='service' element={<Services />} />
-      <Route path='book' element={<SchoolDetails />} />
+      <Route path='admin' element={<AdminLogin />} />
+      <Route path='add' element={<AddDrivingSchool />} />
+      <Route path='dashboard' element={<Dashboard />} />
 
     </Route>
   )

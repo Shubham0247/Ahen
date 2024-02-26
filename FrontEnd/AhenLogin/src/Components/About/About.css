@@ -33,10 +33,13 @@
   text-align: justify;
   height: auto;
   padding: 20px;
-  background: transparent;
+  backdrop-filter: blur(20px);
+  border-width: 2px;
   border-radius: 10px;
+  border-color: rgb(155, 169, 225) ;
   color: white;
   cursor: pointer;
+  box-shadow: 2px 3px 1px lightblue;
   background-size: 500% auto;
   animation: about-cardShine 5s ease-in-out infinite alternate;
   transition: transform 0.4s, filter 0.4s, 400ms;
@@ -131,7 +134,13 @@
 
 /* Why Choose Container */
 .why-choose-container {
-  background: transparent;
+  padding: 5px;
+  text-align: justify;
+  backdrop-filter: blur(20px);
+  border-width: 2px;
+  border-radius: 10px;
+  border-color: rgb(155, 169, 225) ;
+  box-shadow: 2px 3px 1px lightblue;
   animation: about-cardShine 5s ease-in-out infinite alternate;
   transition: transform 0.4s, filter 0.4s, 400ms;
 }

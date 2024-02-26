@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddDrivingSchool = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,8 @@ const AddDrivingSchool = () => {
     const handleInput = (event) => {
         setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
+
+  const navigate = useNavigate();
 
   let options = {
     method: "POST",
@@ -32,6 +35,7 @@ const AddDrivingSchool = () => {
     .then((res) => {
       if (res.ok) {
         console.log("School Added Successfully");
+        navigate("/service");
       } else {
         console.log("Network error occured");
       }

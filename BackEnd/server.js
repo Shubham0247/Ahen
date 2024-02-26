@@ -6,6 +6,7 @@ const path = require('path')
 const UserModel = require("./models/SignupModel")
 const ContactModel = require("./models/ContactModel")
 const SchoolModel = require("./models/SchoolModel")
+const AdminModel = require("./models/AdminModel")
 
 const app = express()
 app.use(express.json())
@@ -42,14 +43,33 @@ app.post("/signin", (req, res) => {
   })
 })
 
+app.post("/admin", (req, res) => {
+  const {email, password} = req.body;
+
+  AdminModel.findOne({email: email})
+  .then(user => {
+    if(user) {
+      if(user.password === password) {
+        res.json("Success")
+      } else {
+        res.json("IncorrectPassword")
+      } 
+    } else {
+      res.json("No record existed")
+    }
+  })
+})
+
 app.post('/signup', (req, res) => {
   UserModel.create(req.body)
   .then(user => res.json(user))
   .catch(err => res.json(err))
 })
 
-app.post('/add', upload.single('img'), (req, res) => {
-  console.log("Hello");
+app.post('/add', (req, res) => {
+  SchoolModel.create(req.body)
+  .then(school => res.json(school))
+  .catch(err => res.json(err))
 });
 
 app.post('/contact', (req, res) => {

@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
  #signin-signup {
     flex-direction: row;
@@ -7,4 +7,32 @@
  #mobile-header {
     flex-direction: row;
  }
+} */
+
+.nav-background {
+   /* background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+   /* background: linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%); */
+   background: linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%);
+
 }
+
+@media (max-width: 768px) {
+
+   #signin-signup {
+      flex-direction: row;
+   }
+  
+   #mobile-header {
+      flex-direction: row;
+   }
+   .active {
+     color: orange;
+   }
+   /* Header.css */
+  
+  .header-yellow {
+     background-color: yellow;
+   }
+  
+   
+  }

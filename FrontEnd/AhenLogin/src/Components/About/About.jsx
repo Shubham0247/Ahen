@@ -1,4 +1,3 @@
-import React from "react";
 import "./About.css";
 import myImg from "../images/img5.png";
 
@@ -15,9 +14,9 @@ export default function About() {
           </div>
 
           <p className=" welcome text-xl text-center font-semibold italic mb-8 ">
-            "Drive with Confidence: Ahen DriveTech - India's Premier Driving
+          Drive with Confidence: Ahen DriveTech - India&apos;s Premier Driving
             Teaching Tech, <br /> Revolutionizing Learning for Skilled and
-            Confident Drivers"
+            Confident Driver&apos;s
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8 md:w-full">
@@ -76,7 +75,7 @@ export default function About() {
                   <div className="text-lg">
                     <h3 className="font-bold mb-2 text-center">Our Vision</h3>
                     <p>
-                      Ahen, India's leading driving school, tackles common
+                      Ahen, Indias&apos;leading driving school, tackles common
                       issues in driver education by offering affordable
                       classes at Rs.100.
                     </p>
@@ -119,7 +118,7 @@ export default function About() {
           </div>
 
           <p className="text-center mt-8 italic">
-            "Join the Ahen Revolution! <br /> An innovative solution to traditional driving school challenges."
+            Join the Ahen Revolution! <br /> An innovative solution to traditional driving school challenges
           </p>
         </div>
       </div>

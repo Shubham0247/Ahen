@@ -118,3 +118,24 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+
+
+@media (max-width: 768px) {
+
+  .signup-screen{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .leftContainer {
+    width: auto;
+    height: auto;
+  }
+
+  .signup-box {
+    width: 400px;
+    align-items: center;
+    margin-left: 13%;
+    height: auto;
+  }
+}
